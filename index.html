@@ -132,7 +132,7 @@
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -146,7 +146,7 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -206,6 +206,35 @@
             
                 <!-- Main Content -->
 
+
+<div class="post-preview">
+
+    <a href="/2020/03/08/python循环列表时需要删除元素正确写法/">
+        <h2 class="post-title">
+            python循环列表时需要删除元素正确写法
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            需要对遍历的列表进行拷贝
+123456789101112131415161718192021# 遍历拷贝的list，操作原始的listnum_list_4 = [1, 2, 2, 2, 3]for item in num_list_4[:]:    if item == 2:        num_list_4.remove(item)    else:        print("item......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            
+            2020-03-08
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#python" title="python">python</a>
+            
+        </div>
+    
+
+</div>
+<hr>
 
 <div class="post-preview">
 
@@ -488,37 +517,6 @@ Server.js
 </div>
 <hr>
 
-<div class="post-preview">
-
-    <a href="/2019/11/08/jquery/">
-        <h2 class="post-title">
-            jquery
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            jQuery 库可以通过一行简单的标记被添加到网页中,使得代码量减少。
-
-选择器
-123456$(document).ready(function()&#123;  $("button").click(function()&#123;//元素选择器    $("#test").hide();//ID选择器    	$(".test").hide();//类选择器  &#125;);&#125......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            
-            2019-11-08
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#javascript" title="javascript">javascript</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
 
 
 <!-- Pager -->
@@ -563,11 +561,13 @@ Server.js
             
         
             
-            <a href="/tags/#javascript" title="javascript" rel="5">javascript</a>
+            <a href="/tags/#web" title="web" rel="2">web</a>
             
         
             
-            <a href="/tags/#web" title="web" rel="2">web</a>
+            <a href="/tags/#javascript" title="javascript" rel="5">javascript</a>
+            
+        
             
         
             

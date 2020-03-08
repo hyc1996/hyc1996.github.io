@@ -14,7 +14,7 @@
     </url>
     
     <url>
-        <loc>http://hyc1996.github.io/tags/</loc>
+        <loc>http://hyc1996.github.io/archive/</loc>
         <lastmod>2017-09-23T13:40:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -28,7 +28,7 @@
     </url>
     
     <url>
-        <loc>http://hyc1996.github.io/archive/</loc>
+        <loc>http://hyc1996.github.io/tags/</loc>
         <lastmod>2017-09-23T13:40:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

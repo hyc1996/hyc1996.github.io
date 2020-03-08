@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          适配器模式 - Hyc-blog
+          python循环列表时需要删除元素正确写法 - Hyc-blog
         
     </title>
 
-    <link rel="canonical" href="http://hyc1996.github.io/2019/11/02/适配器模式/">
+    <link rel="canonical" href="http://hyc1996.github.io/2020/03/08/python循环列表时需要删除元素正确写法/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -86,14 +86,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#设计模式" title="设计模式">设计模式</a>
+                              <a class="tag" href="/tags/#python" title="python">python</a>
                             
                         </div>
-                        <h1>适配器模式</h1>
+                        <h1>python循环列表时需要删除元素正确写法</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by Hyc on
-                            2019-11-02
+                            2020-03-08
                         </span>
                     </div>
                 
@@ -210,26 +210,18 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>Adapter模式也叫适配器模式，是构造型模式之一，通过Adapter模式可以改变已有的类（或外部类）的接口形式。当外部组件不够成熟时，添加adapter，通过adapter调用外部组件。</p>
-<a id="more"></a>
-<h1><span id="code">code</span></h1>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Adapter adapter = <span class="keyword">new</span> Adapter();</span><br><span class="line">        adapter.use();</span><br><span class="line">        Adpater2 adpater2 = <span class="keyword">new</span> Adpater2();</span><br><span class="line">        adpater2.use();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Current</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">use</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"use 22V!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Adapter</span> <span class="keyword">extends</span> <span class="title">Current</span> </span>&#123;</span><br><span class="line">    <span class="comment">//继承模式</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">use</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"use adpter!"</span>);</span><br><span class="line">        <span class="keyword">super</span>.use();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Adpater2</span> </span>&#123;</span><br><span class="line">    <span class="comment">//委让模式</span></span><br><span class="line">    <span class="keyword">private</span> Current current;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Adpater2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.current = <span class="keyword">new</span> Current();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">use</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"use adpater!"</span>);</span><br><span class="line">        current.use();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <h1><span id="需要对遍历的列表进行拷贝">需要对遍历的列表进行拷贝</span></h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 遍历拷贝的list，操作原始的list</span></span><br><span class="line">num_list_4 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> num_list_4[:]:</span><br><span class="line">    <span class="keyword">if</span> item == <span class="number">2</span>:</span><br><span class="line">        num_list_4.remove(item)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"item"</span>, item)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"num_list_4"</span>, num_list_4)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"after remove op"</span>, num_list_4)</span><br><span class="line"></span><br><span class="line"><span class="comment"># item 1</span></span><br><span class="line"><span class="comment"># num_list_4 [1, 2, 2, 2, 3]</span></span><br><span class="line"><span class="comment"># num_list_4 [1, 2, 2, 3]</span></span><br><span class="line"><span class="comment"># num_list_4 [1, 2, 3]</span></span><br><span class="line"><span class="comment"># num_list_4 [1, 3]</span></span><br><span class="line"><span class="comment"># item 3</span></span><br><span class="line"><span class="comment"># num_list_4 [1, 3]</span></span><br><span class="line"><span class="comment"># after remove op [1, 3]</span></span><br></pre></td></tr></table></figure>
+
                 
 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2019/11/02/解释器模式/" data-toggle="tooltip" data-placement="top" title="解释器模式">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2019/11/02/桥接模式/" data-toggle="tooltip" data-placement="top" title="桥接模式">Next Post &rarr;</a>
+                            <a href="/2020/02/19/vue-cli2-跨域设置/" data-toggle="tooltip" data-placement="top" title="vue-cli2-跨域设置">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -259,7 +251,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">code</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">需要对遍历的列表进行拷贝</span></a></li></ol>
         
         </div>
       </aside>
@@ -279,7 +271,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#设计模式" title="设计模式">设计模式</a>
+                          <a class="tag" href="/tags/#python" title="python">python</a>
                         
                     </div>
                 </section>
@@ -299,8 +291,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "http://hyc1996.github.io/2019/11/02/适配器模式/";
-    var disqus_url = "http://hyc1996.github.io/2019/11/02/适配器模式/";
+    var disqus_identifier = "http://hyc1996.github.io/2020/03/08/python循环列表时需要删除元素正确写法/";
+    var disqus_url = "http://hyc1996.github.io/2020/03/08/python循环列表时需要删除元素正确写法/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
