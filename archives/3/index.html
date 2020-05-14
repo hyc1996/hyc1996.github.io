@@ -132,14 +132,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -206,6 +206,43 @@
             
                 <!-- Main Content -->
 
+
+<div class="post-preview">
+
+    <a href="/2019/11/03/备忘录模式/">
+        <h2 class="post-title">
+            备忘录模式
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            Memento模式也叫备忘录模式，是行为模式的一种，它的作用是保持对象的内部状态，并在需要的时候回复对象以前的状态。
+角色
+
+Originator（原生者）需要被保存状态的对象
+Memento（备忘录） 由Originator创建，主要用来保存Originator的内部状态。
+CareTaker（管理者）管理备忘录
+
+
+code
+123456789101112public class tes......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            
+            2019-11-03
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#设计模式" title="设计模式">设计模式</a>
+            
+        </div>
+    
+
+</div>
+<hr>
 
 <div class="post-preview">
 
@@ -512,43 +549,6 @@ Proxy（代理主题）含有对真实主题的引用。
 </div>
 <hr>
 
-<div class="post-preview">
-
-    <a href="/2019/11/01/享元模式/">
-        <h2 class="post-title">
-            享元模式
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            Flyweight模式又叫享元模式，是构造型模式之一。它通过与其他类似对象共享数据来减少内存的占用。
-角色
-
-抽象享元角色
-具体享元角色
-享元工厂角色
-
-
-code
-123456789101112public class test &#123;    public static void main(String[] args) &#123;        PersonFactory pers......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            
-            2019-11-01
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#设计模式" title="设计模式">设计模式</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
 
 
 <!-- Pager -->
@@ -589,9 +589,9 @@ code
     <div class="tags">
         
             
-        
-            
             <a href="/tags/#java" title="java" rel="2">java</a>
+            
+        
             
         
             
@@ -609,11 +609,13 @@ code
             
         
             
-        
+            <a href="/tags/#Mac" title="Mac" rel="2">Mac</a>
             
         
             
             <a href="/tags/#nodejs" title="nodejs" rel="2">nodejs</a>
+            
+        
             
         
             

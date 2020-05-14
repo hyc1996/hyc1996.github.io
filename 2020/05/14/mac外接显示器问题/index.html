@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          解释器模式 - Hyc-blog
+          mac外接显示器问题 - Hyc-blog
         
     </title>
 
-    <link rel="canonical" href="http://hyc1996.github.io/2019/11/02/解释器模式/">
+    <link rel="canonical" href="http://hyc1996.github.io/2020/05/14/mac外接显示器问题/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('undefined')
+            background-image: url('null')
             /*post*/
         
     }
@@ -86,14 +86,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#设计模式" title="设计模式">设计模式</a>
+                              <a class="tag" href="/tags/#Mac" title="Mac">Mac</a>
                             
                         </div>
-                        <h1>解释器模式</h1>
-                        <h2 class="subheading"></h2>
+                        <h1>mac外接显示器问题</h1>
+                        <h2 class="subheading">解决Mac外接显示器无信号问题</h2>
                         <span class="meta">
                             Posted by Hyc on
-                            2019-11-02
+                            2020-05-14
                         </span>
                     </div>
                 
@@ -210,14 +210,13 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>Interpreter模式也叫解释器模式，时行为模式的一种。主要用于计算机程序设计语言，来解释预先定义的文法。</p>
-<a id="more"></a>
-<h1><span id="code">code</span></h1>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Context context = <span class="keyword">new</span> Context(<span class="string">"20"</span>);</span><br><span class="line">        List&lt;Expression&gt; expressions= <span class="keyword">new</span> ArrayList&lt;Expression&gt;();</span><br><span class="line">        expressions.add(<span class="keyword">new</span> PlusExpression());</span><br><span class="line">        expressions.add(<span class="keyword">new</span> MinusExpression());</span><br><span class="line">        expressions.add(<span class="keyword">new</span> PlusExpression());</span><br><span class="line">        <span class="keyword">for</span>(Expression e : expressions)&#123;</span><br><span class="line">            e.interpret(context);</span><br><span class="line">            System.out.println(context.getOutputdata());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Context</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String inputdata;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> outputdata;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Context</span><span class="params">(String inputdata)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.inputdata = inputdata;</span><br><span class="line">        <span class="keyword">this</span>.outputdata = Integer.parseInt(inputdata);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInputdata</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> inputdata;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setInputdata</span><span class="params">(String inputdata)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.inputdata = inputdata;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getOutputdata</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> outputdata;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOutputdata</span><span class="params">(<span class="keyword">int</span> outputdata)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.outputdata = outputdata;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Expression</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">interpret</span><span class="params">(Context context)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PlusExpression</span> <span class="keyword">implements</span> <span class="title">Expression</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">interpret</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"plus"</span>);</span><br><span class="line">        String inputdata = context.getInputdata();</span><br><span class="line">        <span class="keyword">int</span> intinputdate = Integer.parseInt(inputdata);</span><br><span class="line">        intinputdate++;</span><br><span class="line">        context.setInputdata(String.valueOf(intinputdate));</span><br><span class="line">        context.setOutputdata(intinputdate);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MinusExpression</span> <span class="keyword">implements</span> <span class="title">Expression</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">interpret</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Minus"</span>);</span><br><span class="line">        String inputdata = context.getInputdata();</span><br><span class="line">        <span class="keyword">int</span> intinputdate = Integer.parseInt(inputdata);</span><br><span class="line">        intinputdate--;</span><br><span class="line">        context.setInputdata(String.valueOf(intinputdate));</span><br><span class="line">        context.setOutputdata(intinputdate);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <ol>
+<li>是否是显示器的问题。</li>
+<li>看下转换器是否有破损或者弯曲严重。</li>
+<li>看下USB接口是否能正常使用。</li>
+<li>重启电脑，看是否还有唤醒无法显示的问题</li>
+<li>睡眠之前先把转换器和电源线都断开，在重新唤醒后依次接入显示器转换器和电源线。</li>
+</ol>
 
                 
 
@@ -225,13 +224,9 @@
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2019/11/02/中介者模式/" data-toggle="tooltip" data-placement="top" title="中介者模式">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2019/11/02/适配器模式/" data-toggle="tooltip" data-placement="top" title="适配器模式">Next Post &rarr;</a>
+                            <a href="/2020/03/08/python循环列表时需要删除元素正确写法/" data-toggle="tooltip" data-placement="top" title="python循环列表时需要删除元素正确写法">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -261,7 +256,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">code</span></a></li></ol>
+          <ol class="nav">none</ol>
         
         </div>
       </aside>
@@ -281,7 +276,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#设计模式" title="设计模式">设计模式</a>
+                          <a class="tag" href="/tags/#Mac" title="Mac">Mac</a>
                         
                     </div>
                 </section>
@@ -301,8 +296,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "http://hyc1996.github.io/2019/11/02/解释器模式/";
-    var disqus_url = "http://hyc1996.github.io/2019/11/02/解释器模式/";
+    var disqus_identifier = "http://hyc1996.github.io/2020/05/14/mac外接显示器问题/";
+    var disqus_url = "http://hyc1996.github.io/2020/05/14/mac外接显示器问题/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
